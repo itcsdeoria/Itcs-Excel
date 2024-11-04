@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excel Syllabus and Notes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #ece9e6, #ffffff);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+        }
+	.heading{
+		color: black;
+	}
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .topic {
+            margin-bottom: 20px;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+	    color:black;
+        }
+
+        .topic:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .topic h2 {
+            cursor: pointer;
+            padding: 15px;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+            color: black;
+            font-size: 1.5em;
+            margin: 0;
+            transition: background 0.5s ease, border-left 0.5s ease, text-shadow 0.3s ease;
+            border-left: 10px solid transparent;
+        }
+
+        .topic h2:hover {
+            background: linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%);
+            border-left: 10px solid #42a5f5;
+            text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+        }
+
+        .content {
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            padding: 0 15px;
+            background: #f9f9f9;
+            transition: max-height 0.8s cubic-bezier(0.5, 0, 0.1, 1), opacity 0.8s ease, padding 0.8s ease;
+            box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.1);
+            transform-origin: top;
+        }
+
+        .content.open {
+            max-height: 1000px; /* Large enough to fit content */
+            opacity: 1;
+            padding: 15px;
+        }
+
+        .content p {
+            opacity: 0;
+            transform: translateY(10px);
+            animation: fadeInUp 0.6s forwards;
+        }
+
+        .content.open p {
+            animation-delay: 0.3s;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        pre {
+            background: #f0f0f0;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Excel Syllabus and Notes</h1>
+        
+        <div class="topic">
+            <h2 onclick="toggleContent(this)">1. Introduction to Excel</h2>
+            <div class="content">
+                <p>Basics of Excel, Interface, and Navigation.</p>
+                <p><pre style="font-size: 20px;">
+First Class of Excel 
+The Excel Screen
+*Rows, Columns, Cells
+*Scroll Bar
+*Tabs
+*Ribbon
+*Quick Access Toolbar
+*Name Box
+*Formula Bar
+*Zoom
+*Sheets
+*FileName
+Workbook Vs Worksheet
+Simple Data Entry
+                </pre></p>
+                <p><a href="https://drive.google.com/file/d/16YOoRISyAoidsaGrmD_iYzSjsXyJXcDn/view?usp=sharing" target="_blank" download="Excel 1st Class">Click here to download Image</a></p>
+            </div>
+        </div>
+        
+        <div class="topic">
+            <h2 onclick="toggleContent(this)" class ="heading">2. Formatting and Merge</h2>
+            <div class="content">
+                <p>Make the content more interactive.</p>
+                <p><pre style="font-size: 20px;">
+Basic Class of Excel 
+
+1) Cell Vs Active Cell
+2) Adjustment of Cell
+3) Selection of Cell 
+4) Copy and Paste 
+5) Move 
+
+--------------------------------------------------
+
+Font
+
+1) Bold
+2) Italic
+3) Underline
+4) Border
+5) Background Color
+6) Font Colour
+
+---------------------------------------------------
+
+Alignment
+
+1) Left, Right, Center
+2) Up, Down, Middle
+3) Orientation 
+4) Wrap text 
+5) Merge 
+
+-----------------------------------------------------
+Formatting
+
+1) Number
+2) Date
+3) Currency
+                </pre></p>
+            </div>
+        </div>
+        
+        <div class="topic">
+            <h2 onclick="toggleContent(this)">3. Data Management</h2>
+            <div class="content">
+                <p>Sorting and filtering data in Excel.</p>
+                <p>Notes: Data ko sort aur filter karna data analysis mein madadgar hota hai. Isse aap important data ko easily access kar sakte hain.</p>
+            </div>
+        </div>
+        
+        <div class="topic">
+            <h2 onclick="toggleContent(this)">4. Charts and Graphs</h2>
+            <div class="content">
+                <p>Creating and formatting charts.</p>
+                <p>Notes: Charts aur graphs ka istemal data ko visual form mein present karne ke liye hota hai, jo samajhne mein asaan hota hai.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function toggleContent(element) {
+            const content = element.nextElementSibling;
+            const currentlyOpen = document.querySelector('.content.open');
+
+            if (currentlyOpen && currentlyOpen !== content) {
+                currentlyOpen.classList.remove('open');
+            }
+
+            content.classList.toggle('open');
+
+            // Smoothly scroll to the opened content
+            if (content.classList.contains('open')) {
+                content.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+    </script>
+</body>
+</html>
